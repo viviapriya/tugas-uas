@@ -1,0 +1,15 @@
+<AdminScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        
+        Label:
+            text: "Selamat Datang, Admin!"
+            font_size: 24
+        
+        Button:
+            text: "Logout"
+            size_hint: 1, None
+            height: 50
+            on_press: root.logout()

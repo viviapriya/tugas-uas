@@ -1,0 +1,42 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        size_hint: (1, 1)
+
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        # Logo
+        Image:
+            source: 'gambar/logo.jpg'
+            size_hint: (1, 0.4)
+
+        # Input Username
+        TextInput:
+            id: username
+            hint_text: 'Username'
+            size_hint: (1, None)
+            height: 50
+            on_text: root.username = self
+
+        # Input Password
+        TextInput:
+            id: password
+            hint_text: 'Password'
+            password: True
+            size_hint: (1, None)
+            height: 50
+            on_text: root.password = self
+
+        # Tombol Login
+        Button:
+            text: 'Login'
+            size_hint: (1, None)
+            height: 50
+            on_press: root.check_login(self)

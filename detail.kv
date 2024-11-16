@@ -1,0 +1,58 @@
+<RegionDetailScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [10, 10]
+        spacing: 10
+
+        # Background putih untuk halaman detail
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1  # Warna putih (RGBA)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        # Gambar Lokasi
+        Image:
+            id: detail_image
+            source: ''
+            allow_stretch: True
+            size_hint_y: 0.5
+
+        # Nama Lokasi
+        Label:
+            id: detail_text
+            text: ''
+            font_size: 24
+            bold: True
+            halign: 'center'
+            color: 0, 0, 0, 1  # Teks warna hitam untuk kontras dengan background putih
+            size_hint_y: None
+            height: 40
+
+        # Deskripsi Lokasi
+        Label:
+            id: detail_description
+            text: ''
+            font_size: 16
+            halign: 'left'
+            valign: 'top'
+            color: 0, 0, 0, 1  # Teks warna hitam
+            text_size: self.width, None
+            size_hint_y: 1
+
+         # Tombol Perencanaan Perjalanan
+        Button:
+            text: "Perencanaan Perjalanan"
+            size_hint_y: 0.1
+            background_color: (0, 0.5, 0.5, 1)
+            on_press: root.on_trip_button_click()
+
+         # Tombol Kembali
+        Button:
+            text: "Kembali"
+            size_hint_y: None
+            height: 50
+            on_release: root.go_back()
+
+         

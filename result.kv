@@ -1,0 +1,78 @@
+<SearchResultScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        BoxLayout:
+            size_hint_y: None
+            height: '60dp'
+            canvas.before:
+                Color:
+                    rgba: 0.9, 0.9, 1, 1  # Warna latar biru muda
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Label:
+                text: 'Happy Holiday'
+                font_size: '16sp'
+                color: 0.6, 0.3, 0.7, 1
+            Image:
+                source: 'logo.png'  # Replace with the path to your logo
+                size_hint_x: None
+                width: '50dp'
+
+        Label:
+            id: city_label
+            text: 'Yogyakarta'
+            font_size: '20sp'
+            size_hint_y: None
+            height: '40dp'
+            color: 0, 0, 0, 1
+
+        # Main results grid
+        GridLayout:
+            cols: 3
+            row_force_default: True
+            row_default_height: '100dp'
+            spacing: 10
+
+            # Row 1
+            Image:
+                source: 'gambar/hotel phoenix.jpg'
+            Image:
+                source: 'gambar/villa jogja.jpeg'
+            Image:
+                source: 'gambar/sunan hotel.jpg'
+           
+            # Row 2
+            Image:
+                source: 'gambar/pusur tubing.jpg'
+            Image:
+                source: 'gambar/umbul ponggok.jpg'
+            Image:
+                source: 'gambar/soko langit.jpg'
+            
+            # Row 3
+            Image:
+                source: 'gambar/soto triwindu.jpg'
+            Image:
+                source: 'gambar/selat solo.jpg'
+            Image:
+                source: 'gambar/kopi klotok.jpg'
+
+        # Bottom navigation buttons
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            padding: [10, 5]
+            Button:
+                text: '<'
+                size_hint_x: None
+                width: '50dp'
+            Label:
+            Button:
+                text: ''
+                size_hint_x: None
+                width: '50dp'
+                # Placeholder for profile icon

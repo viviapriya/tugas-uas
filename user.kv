@@ -1,0 +1,189 @@
+<UserScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        # Header dengan logo dan teks "Happy Holiday"
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.2
+            padding: [10, 10]
+            spacing: 10
+            canvas.before:
+                Color:
+                    rgba: 0.9, 0.9, 1, 1  # Warna latar biru muda
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            Label:
+                text: "Happy\nHoliday"
+                font_size: 24
+                color: 1, 0.6, 0.6, 1
+                halign: 'left'
+                valign: 'middle'
+                text_size: self.size
+
+            Image:
+                source: 'gambar/logo.jpg'
+                size_hint_x: 0.3
+                allow_stretch: True
+
+        # Pencarian kota
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.1
+            padding: [10, 5]
+            spacing: 10
+
+            TextInput:
+                id: search_input
+                hint_text: "Masukkan nama kota..."
+                size_hint_x: 0.8
+                height: 30
+
+            Button:
+                text: "Cari"
+                size_hint_x: 0.2
+                on_press: root.search_city(self)
+
+        # Daftar tempat wisata
+        GridLayout:
+            cols: 3
+            spacing: 10
+            padding: [10, 10]
+            size_hint_y: 0.7
+
+            # Tempat 1
+            BoxLayout:
+                orientation: 'vertical'
+                Image:
+                    source: 'gambar/umbul ponggok.jpg'
+                    allow_stretch: True
+                    on_touch_down: lambda instance, touch: root.on_image_click(instance, touch, 'gambar/umbul ponggok.jpg', 'Umbul Ponggok', 'Umbul Ponggok adalah tempat wisata alam dengan air jernih untuk berenang dan snorkeling.')
+                Label:
+                    text: "Umbul Ponggok"
+                    font_size: 12
+                    halign: 'center'
+                    valign: 'middle'
+                    size_hint_y: None
+                    height: 20
+
+            # Tempat 2
+            BoxLayout:
+                orientation: 'vertical'
+                Image:
+                    source: 'gambar/soko langit.jpg'
+                    allow_stretch: True
+                    on_touch_down: lambda instance, touch: root.on_image_click(instance, touch, 'gambar/soko langit.jpg', 'Soko Langit', 'Soko Langit adalah tempat wisata dengan pemandangan alam pegunungan yang memukau.')
+                Label:
+                    text: "Soko Langit"
+                    font_size: 12
+                    halign: 'center'
+                    valign: 'middle'
+                    size_hint_y: None
+                    height: 20
+
+            # Tempat 3
+            BoxLayout:
+                orientation: 'vertical'
+                Image:
+                    source: 'gambar/pusur tubing.jpg'
+                    allow_stretch: True
+                    on_touch_down: lambda instance, touch: root.on_image_click(instance, touch, 'gambar/pusur tubing.jpg', 'Pusur Tubing', 'Pusur Tubing menawarkan pengalaman tubing di sungai yang menyenangkan.')
+                Label:
+                    text: "Pusur Tubing"
+                    font_size: 12
+                    halign: 'center'
+                    valign: 'middle'
+                    size_hint_y: None
+                    height: 20
+
+            # Tempat 4
+            BoxLayout:
+                orientation: 'vertical'
+                Image:
+                    source: 'gambar/kopi klotok.jpg'
+                    allow_stretch: True
+                    on_touch_down: lambda instance, touch: root.on_image_click(instance, touch, 'gambar/kopi klotok.jpg', 'Kopi Klotok', 'Kopi Klotok adalah tempat makan dengan menu kopi khas dan suasana pedesaan yang sejuk.')
+                Label:
+                    text: "Kopi Klotok"
+                    font_size: 12
+                    halign: 'center'
+                    valign: 'middle'
+                    size_hint_y: None
+                    height: 20
+
+            # Tempat 5
+            BoxLayout:
+                orientation: 'vertical'
+                Image:
+                    source: 'gambar/selat solo.jpg'
+                    allow_stretch: True
+                    on_touch_down: lambda instance, touch: root.on_image_click(instance, touch, 'gambar/selat solo.jpg', 'Selat Solo', 'Selat Solo terkenal dengan pemandangan laut dan hidangan seafood yang lezat.')
+                Label:
+                    text: "Selat Solo"
+                    font_size: 12
+                    halign: 'center'
+                    valign: 'middle'
+                    size_hint_y: None
+                    height: 20
+
+            # Tempat 6
+            BoxLayout:
+                orientation: 'vertical'
+                Image:
+                    source: 'gambar/soto triwindu.jpg'
+                    allow_stretch: True
+                    on_touch_down: lambda instance, touch: root.on_image_click(instance, touch, 'gambar/soto triwindu.jpg', 'Soto Triwindu', 'Soto Triwindu adalah tempat makan yang terkenal dengan soto khas Solo.')
+                Label:
+                    text: "Soto Triwindu"
+                    font_size: 12
+                    halign: 'center'
+                    valign: 'middle'
+                    size_hint_y: None
+                    height: 20
+
+            # Tempat 7
+            BoxLayout:
+                orientation: 'vertical'
+                Image:
+                    source: 'gambar/hotel phoenix.jpg'
+                    allow_stretch: True
+                    on_touch_down: lambda instance, touch: root.on_image_click(instance, touch, 'gambar/hotel phoenix.jpg', 'Hotel Phoenix', 'Hotel Phoenix adalah hotel berbintang dengan fasilitas lengkap dan pelayanan mewah.')
+                Label:
+                    text: "Hotel Phoenix"
+                    font_size: 12
+                    halign: 'center'
+                    valign: 'middle'
+                    size_hint_y: None
+                    height: 20
+
+            # Tempat 8
+            BoxLayout:
+                orientation: 'vertical'
+                Image:
+                    source: 'gambar/sunan hotel.jpg'
+                    allow_stretch: True
+                    on_touch_down: lambda instance, touch: root.on_image_click(instance, touch, 'gambar/sunan hotel.jpg', 'Sunan Hotel', 'Sunan Hotel menyediakan akomodasi nyaman dan fasilitas modern di pusat kota.')
+                Label:
+                    text: "Sunan Hotel"
+                    font_size: 12
+                    halign: 'center'
+                    valign: 'middle'
+                    size_hint_y: None
+                    height: 20
+
+            # Tempat 9
+            BoxLayout:
+                orientation: 'vertical'
+                Image:
+                    source: 'gambar/tjokro_hotel.jpg'
+                    allow_stretch: True
+                    on_touch_down: lambda instance, touch: root.on_image_click(instance, touch, 'gambar/tjokro_hotel.jpg', 'Tjokro Hotel', 'Tjokro Hotel adalah hotel berbintang dengan layanan terbaik dan suasana yang tenang.')
+                Label:
+                    text: "Tjokro Hotel"
+                    font_size: 12
+                    halign: 'center'
+                    valign: 'middle'
+                    size_hint_y: None
+                    height: 20

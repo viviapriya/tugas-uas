@@ -1,0 +1,64 @@
+<TravelPlanScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [20, 20, 20, 20]  # Padding untuk memberi jarak
+        spacing: 10  # Jarak antar elemen
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1  # Warna latar belakang putih
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text: "Perencanaan Perjalanan"
+            font_size: '24sp'  # Menggunakan sp untuk ukuran font
+            size_hint_y: None
+            height: '50dp'
+            halign: 'center'
+
+        TextInput:
+            id: selected_region
+            hint_text: "Nama Region"
+            size_hint_y: None
+            height: '50dp'
+            font_size: '16sp'
+            multiline: False
+
+        TextInput:
+            id: date_input
+            hint_text: "Tanggal Keberangkatan"
+            size_hint_y: None
+            height: '50dp'
+            font_size: '16sp'
+            multiline: False
+
+        TextInput:
+            id: time_input
+            hint_text: "Waktu Keberangkatan"
+            size_hint_y: None
+            height: '50dp'
+            font_size: '16sp'
+            multiline: False
+
+        TextInput:
+            id: price_input
+            hint_text: "Harga Perjalanan"
+            size_hint_y: None
+            height: '50dp'
+            font_size: '16sp'
+            multiline: False
+
+        Button:
+            text: "Simpan Perencanaan"
+            size_hint_y: None
+            height: '50dp'
+            font_size: '18sp'
+            on_press: root.save_travel_plan()
+
+        Button:
+            text: "Kembali"
+            size_hint_y: None
+            height: '50dp'
+            font_size: '18sp'
+            on_press: root.go_back()
